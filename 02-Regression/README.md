@@ -1,7 +1,6 @@
-
 # Regression
 
-This folder contains regression exercises focused on predicting continuous target variables using different preprocessing techniques and regression models.
+This folder contains regression projects focused on predicting continuous target variables using different preprocessing techniques, feature engineering methods, and regression models.
 
 ## Exercises
 
@@ -22,7 +21,7 @@ Predict diamond prices using their physical and categorical characteristics.
 * Identification of numerical and categorical features
 * Ordinal encoding for `cut` and `clarity`
 * One-hot encoding for `color`
-* Feature standardization using `StandardScaler`
+* Feature scaling using `StandardScaler`
 * Training a `LinearRegression` model
 * Evaluation using the R² score
 * Generating predictions for the test set and preparing a submission file
@@ -35,53 +34,83 @@ Predict diamond prices using their physical and categorical characteristics.
 * Categorical Encoding
 * Ordinal Encoding
 * One-Hot Encoding
-* Feature Scaling / Standardization
+* Feature Scaling
 * R² Evaluation
 * Train/Test Preprocessing
 * Prediction and Submission
+
 
 ---
 
 ### 2. Life Expectancy Prediction
 
 **Objective:**
-Predict the life expectancy of countries using health, economic, demographic, and development-related indicators.
+Predict life expectancy of countries using health, economic, demographic, and development-related indicators.
 
 **Dataset:**
 
-* Training set: 2,848 samples, 18 columns
-* Test set: 80 samples, 17 columns
+* Training set: 2,848 samples, 22 columns
+* Test set: 80 samples, 21 columns
 * Target: `Life expectancy`
 
 **Main steps:**
 
-* Exploratory inspection and statistical analysis
-* Detection and analysis of missing values
-* Missing-value imputation using the mode
-* Applying training-set imputation values consistently to the test set where applicable
+* Exploratory Data Analysis (EDA)
+* Statistical analysis and feature inspection
+* Missing value detection and handling
+* Median imputation for missing numerical values
+* Applying preprocessing steps consistently on training and test data
 * Label encoding of the `Status` feature
 * One-hot encoding of the `Country` feature
 * Feature scaling using `MinMaxScaler`
-* Generating polynomial features using `PolynomialFeatures`
-* Training a `LinearRegression` model on polynomial features
-* Evaluation using the R² score
+* Feature selection experiments
+* Polynomial feature generation using `PolynomialFeatures`
+* Training regression models:
+    * Linear Regression
+    * Ridge Regression
+    * Lasso Regression
+    * ElasticNet
+    * Random Forest Regressor
+    * Gradient Boosting Regressor
+* Hyperparameter tuning for Ridge regularization
+* Final model selection using validation performance
 * Generating predictions for the test set and preparing a submission file
 
-**Training R²:** ~99.89%
+
+**Final Model:**
+
+* Polynomial Features + Ridge Regression
+
+
+**Validation Performance:**
+
+* **R² Score:** ~96.27%
+* **MAE:** ~1.03
+* **RMSE:** ~1.83
+
 
 **Main topics:**
 
 * Regression
 * Linear Regression
-* Polynomial Features
 * Polynomial Regression
-* Missing Value Handling
-* Mode Imputation
+* Polynomial Feature Generation
+* Regularization
+    * Ridge Regression (L2 Regularization)
+    * Lasso Regression (L1 Regularization)
+    * ElasticNet
+* Overfitting Control
+* Missing Value Imputation
 * Label Encoding
 * One-Hot Encoding
-* Feature Scaling / Min-Max Normalization
-* R² Evaluation
-* Prediction and Submission
+* Feature Scaling
+* Feature Selection
+* Model Comparison
+* Hyperparameter Tuning
+* R², MAE, RMSE Evaluation
+* Train/Test Preprocessing
+* Prediction and Submission Generation
+
 
 ---
 
@@ -89,22 +118,30 @@ Predict the life expectancy of countries using health, economic, demographic, an
 
 Across these exercises, the following regression concepts and techniques are practiced:
 
-* Regression
+* Regression Algorithms
 * Linear Regression
 * Polynomial Regression
-* Polynomial Feature Generation
+* Regularized Regression
+* Ridge, Lasso, and ElasticNet
+* Polynomial Feature Engineering
+* Feature Selection
 * Missing Value Handling
-* Categorical Encoding
+* Categorical Feature Encoding
 * Label Encoding
 * Ordinal Encoding
 * One-Hot Encoding
 * Feature Scaling
-* Standardization
-* Min-Max Normalization
-* R² Score
+    * StandardScaler
+    * MinMaxScaler
+* Model Evaluation
+    * R² Score
+    * MAE
+    * RMSE
+* Model Comparison
+* Hyperparameter Tuning
 * Train/Test Preprocessing
-* Model Training
 * Prediction and Submission Generation
+
 
 ## Folder Structure
 
@@ -120,4 +157,3 @@ Regression/
 └── 02-Life-Expectancy-Prediction/
     ├── notebook.ipynb
     └── data/
-```
