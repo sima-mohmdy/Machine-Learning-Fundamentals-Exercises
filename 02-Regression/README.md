@@ -1,6 +1,6 @@
 # Regression
 
-This folder contains regression projects focused on predicting continuous target variables using different preprocessing techniques, feature engineering methods, and regression models.
+This folder contains regression projects focused on predicting continuous target variables using different preprocessing techniques, feature engineering methods, feature selection approaches, and regression models.
 
 ## Exercises
 
@@ -39,7 +39,6 @@ Predict diamond prices using their physical and categorical characteristics.
 * Train/Test Preprocessing
 * Prediction and Submission
 
-
 ---
 
 ### 2. Life Expectancy Prediction
@@ -59,28 +58,28 @@ Predict life expectancy of countries using health, economic, demographic, and de
 * Statistical analysis and feature inspection
 * Missing value detection and handling
 * Median imputation for missing numerical values
-* Applying preprocessing steps consistently on training and test data
+* Splitting the training data into training and validation sets
+* Applying preprocessing consistently across training, validation, and test data
 * Label encoding of the `Status` feature
 * One-hot encoding of the `Country` feature
 * Feature scaling using `MinMaxScaler`
-* Feature selection experiments
+* Feature selection using `SelectKBest` with `f_regression`
 * Polynomial feature generation using `PolynomialFeatures`
-* Training regression models:
-    * Linear Regression
-    * Ridge Regression
-    * Lasso Regression
-    * ElasticNet
-    * Random Forest Regressor
-    * Gradient Boosting Regressor
-* Hyperparameter tuning for Ridge regularization
-* Final model selection using validation performance
-* Generating predictions for the test set and preparing a submission file
+* Training and comparing regression models:
 
+  * Linear Regression
+  * Ridge Regression
+  * Lasso Regression
+  * ElasticNet
+  * Random Forest Regressor
+  * Gradient Boosting Regressor
+* Hyperparameter tuning for Ridge regularization
+* Evaluating models using validation performance
+* Generating predictions for the test set and preparing a submission file
 
 **Final Model:**
 
 * Polynomial Features + Ridge Regression
-
 
 **Validation Performance:**
 
@@ -88,17 +87,16 @@ Predict life expectancy of countries using health, economic, demographic, and de
 * **MAE:** ~1.03
 * **RMSE:** ~1.83
 
-
 **Main topics:**
 
 * Regression
 * Linear Regression
-* Polynomial Regression
 * Polynomial Feature Generation
 * Regularization
-    * Ridge Regression (L2 Regularization)
-    * Lasso Regression (L1 Regularization)
-    * ElasticNet
+
+  * Ridge Regression (L2 Regularization)
+  * Lasso Regression (L1 Regularization)
+  * ElasticNet (L1 + L2 Regularization)
 * Overfitting Control
 * Missing Value Imputation
 * Label Encoding
@@ -108,9 +106,8 @@ Predict life expectancy of countries using health, economic, demographic, and de
 * Model Comparison
 * Hyperparameter Tuning
 * R², MAE, RMSE Evaluation
-* Train/Test Preprocessing
+* Train/Validation/Test Preprocessing
 * Prediction and Submission Generation
-
 
 ---
 
@@ -120,10 +117,9 @@ Across these exercises, the following regression concepts and techniques are pra
 
 * Regression Algorithms
 * Linear Regression
-* Polynomial Regression
+* Polynomial Feature Engineering
 * Regularized Regression
 * Ridge, Lasso, and ElasticNet
-* Polynomial Feature Engineering
 * Feature Selection
 * Missing Value Handling
 * Categorical Feature Encoding
@@ -131,17 +127,19 @@ Across these exercises, the following regression concepts and techniques are pra
 * Ordinal Encoding
 * One-Hot Encoding
 * Feature Scaling
-    * StandardScaler
-    * MinMaxScaler
+
+  * StandardScaler
+  * MinMaxScaler
 * Model Evaluation
-    * R² Score
-    * MAE
-    * RMSE
+
+  * R² Score
+  * MAE
+  * RMSE
 * Model Comparison
 * Hyperparameter Tuning
-* Train/Test Preprocessing
+* Overfitting Control
+* Train/Validation/Test Preprocessing
 * Prediction and Submission Generation
-
 
 ## Folder Structure
 
@@ -157,3 +155,4 @@ Regression/
 └── 02-Life-Expectancy-Prediction/
     ├── notebook.ipynb
     └── data/
+```
