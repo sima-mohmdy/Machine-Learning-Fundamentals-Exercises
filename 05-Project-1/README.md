@@ -1,36 +1,71 @@
 
-# Travel Reason Prediction — MrBilit
+# Project 1 – Machine Learning Exercises
 
-## Overview
-The goal of this exercise is to predict the reason for a user's trip based on MrBilit ticket data. The target variable, `TripReason`, distinguishes between the classes `Work` and `Int`.
+This project contains two machine learning exercises focused on classification problems, including data preprocessing, feature engineering, model training, and evaluation.
 
-## Dataset
-- **Training set:** 101,017 rows and 22 columns
-- **Test set:** 43,293 rows and 21 columns
-- **Target variable:** `TripReason`
-- **Classes:** `Work`, `Int`
+## Exercise 1: Trip Purpose Prediction
 
-## Workflow
-1. **Exploratory Data Analysis (EDA):** Examined the dataset structure, data types, missing values, and target distribution.
-2. **Data Cleaning:** Removed selected identifier and hash-related columns and handled missing values in `VehicleClass` and `VehicleType`.
-3. **Feature Engineering:** Converted `Created` and `DepartureTime` into datetime features, including weekday, hour, and month.
-4. **Categorical Encoding:** Used `OrdinalEncoder` with support for unseen categories.
-5. **Data Splitting:** Split the training data into training and validation sets.
-6. **Model Training:** Trained a `RandomForestClassifier` with 100 estimators.
-7. **Prediction:** Generated predictions for the test set and prepared the submission DataFrame.
+**Objective:** Predict the purpose of a trip using the Masterبلیط dataset and the `TripReason` target variable.
 
-## Results
-- **Model:** Random Forest Classifier
-- **Validation weighted F1-score:** 84.33%
+### Dataset
+- Training data: 101,017 records
+- Test data: 43,293 records
+- Target variable: `TripReason` (`Work` / `Int`)
 
-The classification report showed different precision and recall values for the `Work` and `Int` classes, indicating that model performance should be evaluated beyond a single aggregate metric.
+### Workflow
+- Data preprocessing and missing-value handling
+- Removal of unnecessary columns
+- Feature engineering and extraction of time-related features
+- Categorical feature encoding using `OrdinalEncoder`
+- Model training using `RandomForestClassifier` with 100 trees
+- Model evaluation using weighted F1-score
 
-## Technologies
+### Result
+- Validation Weighted F1-score: **84.33%**
+
+---
+
+## Exercise 2: Ticket Cancellation Prediction
+
+**Objective:** Predict whether a ticket will be cancelled using the `Cancel` target variable.
+
+### Dataset
+- Training data: 101,017 records and 22 columns
+- Test data: 43,293 records
+- Target variable: `Cancel` (binary classification)
+- Class distribution in the training data:
+  - Not cancelled: 85,716
+  - Cancelled: 15,301
+
+### Workflow
+- Removal of identifier and hashed columns
+- Handling missing values in `VehicleType` and `VehicleClass`
+- Feature engineering and extraction of date/time features
+- Encoding categorical variables using `OrdinalEncoder`
+- Conversion of Boolean features into numeric values
+- Handling class imbalance using SMOTE
+- Model training using `XGBClassifier`
+- Model evaluation using weighted F1-score
+
+### Result
+- Validation Weighted F1-score: **97.76%**
+
+---
+
+## Technologies and Libraries
+
 - Python
 - Pandas
 - NumPy
-- Matplotlib
 - Scikit-learn
+- Imbalanced-learn
+- XGBoost
 
-## Notes
-The validation score reflects performance on the selected validation split and does not guarantee the same performance on unseen data. Further improvements could include more systematic feature selection, alternative categorical encoding strategies, and hyperparameter tuning.
+## Key Learning Outcomes
+
+- Data preprocessing and missing-value handling
+- Feature engineering and categorical encoding
+- Classification with tree-based ensemble models
+- Handling imbalanced datasets
+- Model evaluation using weighted F1-score
+
