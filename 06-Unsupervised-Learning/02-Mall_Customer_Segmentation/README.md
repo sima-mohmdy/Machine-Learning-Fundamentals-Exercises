@@ -54,7 +54,7 @@ The reported Silhouette Score for the six-cluster configuration is approximately
 - Scikit-learn
 - Matplotlib / Seaborn
 
-## 🎯 Key Concepts
+##  Key Concepts
 - Unsupervised Learning
 - Customer Segmentation
 - K-Means Clustering
